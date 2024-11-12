@@ -1,23 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estamos probando para Ud.</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-size: 2em; /* Ajusta el tamaño de la letra según tus preferencias */
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proximamente</title>
+<style>
+  /* Estilos para el cuadro de diálogo */
+  .dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+    width: 300px;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .dialog h2 {
+    margin-top: 0;
+  }
+
+  .dialog input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  .dialog button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  .dialog button:hover {
+    background-color: #45a049;
+  }
+</style>
+<script>
+  // Función para mostrar el cuadro de diálogo
+  function showDialog() {
+    document.querySelector('.dialog').style.display = 'block';
+  }
+
+  // Función para ocultar el cuadro de diálogo
+  function hideDialog() {
+    document.querySelector('.dialog').style.display = 'none';
+  }
+</script>
 </head>
 <body>
-  <h1>Estamos probando para Ud.</h1>
+
+<h1>Proximamente</h1>
+
+<!-- Botón para abrir el cuadro de diálogo -->
+<button onclick="showDialog()">Abrir Dirección Virtual</button>
+
+<!-- Cuadro de diálogo -->
+<div class="dialog">
+  <h2>Dirección Virtual</h2>
+  <input type="text" id="hexInput" placeholder="Ingrese un valor hexadecimal (max 8 caracteres)">
+  <button onclick="hideDialog()">Aceptar</button>
+</div>
+
 </body>
 </html>
+
 
 
